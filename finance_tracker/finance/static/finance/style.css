@@ -1,0 +1,74 @@
+/* style.css */
+
+/* Body and background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Buttons */
+button, .btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover, .btn:hover {
+    background-color: #45a049;
+}
+
+/* Forms */
+form {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 400px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Transaction highlight */
+.income {
+    color: green;
+    font-weight: bold;
+}
+
+.expense {
+    color: red;
+    font-weight: bold;
+}

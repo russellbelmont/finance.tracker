@@ -1,15 +1,32 @@
-<h1>Personal Finance Tracker</h1>
-<a href="{% url 'add_transaction' %}">Add Transaction</a> | 
-<a href="{% url 'summary' %}">View Summary</a>
+{% extends 'finance/base.html' %}
 
-<h2>Transactions</h2>
-{% if transactions %}
-    <ul>
-        {% for t in transactions %}
-            <li>{{ t.type }}: {{ t.category }} - {{ t.amount }} ({{ t.date }})</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No transactions yet.</p>
-{% endif %}
+{% block title %}Home{% endblock %}
 
+{% block content %}
+    <a href="{% url 'add_transaction' %}" class="btn">Add Transaction</a>
+    <a href="{% url 'summary' %}" class="btn">View Summary</a>
+
+    <h2>Transactions</h2>
+    {% if transactions %}
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Description</th>
+            </tr>
+            {% for t in transactions %}
+            <tr>
+                <td>{{ t.date }}</td>
+                <td class="{% if t.type == 'Income' %}income{% else %}expense{% endif %}">{{ t.type }}</td>
+                <td>{{ t.category }}</td>
+                <td>{{ t.amount }}</td>
+                <td>{{ t.description }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No transactions yet.</p>
+    {% endif %}
+{% endblock %}

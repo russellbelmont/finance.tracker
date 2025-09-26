@@ -1,3 +1,7 @@
+{% extends 'finance/base.html' %}
+{% load static %}
+
+{% block content %}
 <h1>Finance Summary</h1>
 <a href="{% url 'home' %}">Home</a> | 
 <a href="{% url 'add_transaction' %}">Add Transaction</a>
@@ -5,3 +9,4 @@
 <p>Total Income: {{ total_income }}</p>
 <p>Total Expense: {{ total_expense }}</p>
 <p>Balance: {{ balance }}</p>
+{% endblock %}

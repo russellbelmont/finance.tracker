@@ -1,8 +1,12 @@
+{% extends 'finance/base.html' %}
+{% load static %}
+
+{% block content %}
 <h1>Add Transaction</h1>
-<a href="{% url 'home' %}">Home</a>
 
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Add</button>
+    <button type="submit" class="btn">Add</button>
 </form>
+{% endblock %}
