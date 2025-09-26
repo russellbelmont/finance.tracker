@@ -1,0 +1,6 @@
+<h1>Summary</h1>
+<p>Total Income: {{ total_income }}</p>
+<p>Total Expenses: {{ total_expenses }}</p>
+<p>Saved: {{ saved }}</p>
+<p>Savings Goal: {{ goal.goal_amount if goal else "No goal set" }}</p>
+<a href="{% url 'home' %}">Back</a>

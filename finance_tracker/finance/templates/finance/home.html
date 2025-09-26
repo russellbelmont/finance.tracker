@@ -1,0 +1,12 @@
+<h1>Personal Finance Tracker</h1>
+<a href="{% url 'add_transaction' %}">Add Transaction</a> |
+<a href="{% url 'summary' %}">View Summary</a>
+<hr>
+<h2>Transactions</h2>
+<ul>
+    {% for t in transactions %}
+    <li>{{ t.date }} - {{ t.tx_type }} - {{ t.category }} - {{ t.amount }} - {{ t.description }}</li>
+    {% empty %}
+    <li>No transactions yet.</li>
+    {% endfor %}
+</ul>
