@@ -41,17 +41,24 @@ def menu():
             set_savings_goal(amount)
 
         elif choice == "5":
-            total_income = get_total_income()
-            total_expenses = get_total_expenses()
-            savings = get_savings_progress()
-            print(Fore.CYAN + f"\n--- Summary Report ---")
-            print(Fore.GREEN + f"Total Income: {total_income}")
-            print(Fore.RED + f"Total Expenses: {total_expenses}")
-            if savings:
-                saved, percent = savings
-                print(Fore.MAGENTA + f"Savings Progress: {saved} ({percent:.1f}% of goal)")
-            else:
-                print(Fore.MAGENTA + "No savings goal set yet.")
+    total_income = get_total_income()
+    total_expenses = get_total_expenses()
+    savings = get_savings_progress()
+    
+    print(Fore.CYAN + "\n--- Summary Report ---")
+    print(Fore.GREEN + f"Total Income: {total_income}")
+    print(Fore.RED + f"Total Expenses: {total_expenses}")
+    
+    if savings:
+        saved, percent = savings
+        # Create a simple progress bar
+        bar_length = 30
+        filled_length = int(bar_length * percent / 100)
+        bar = "█" * filled_length + "-" * (bar_length - filled_length)
+        print(Fore.MAGENTA + f"Savings Progress: {saved} ({percent:.1f}% of goal)")
+        print(Fore.YELLOW + f"[{bar}]")
+    else:
+        print(Fore.MAGENTA + "No savings goal set yet.")
 
         elif choice == "6":
             print(Fore.CYAN + "Exiting. Goodbye!")
