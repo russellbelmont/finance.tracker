@@ -1,6 +1,7 @@
-<h1>Summary</h1>
+<h1>Finance Summary</h1>
+<a href="{% url 'home' %}">Home</a> | 
+<a href="{% url 'add_transaction' %}">Add Transaction</a>
+
 <p>Total Income: {{ total_income }}</p>
-<p>Total Expenses: {{ total_expenses }}</p>
-<p>Saved: {{ saved }}</p>
-<p>Savings Goal: {{ goal.goal_amount if goal else "No goal set" }}</p>
-<a href="{% url 'home' %}">Back</a>
+<p>Total Expense: {{ total_expense }}</p>
+<p>Balance: {{ balance }}</p>
